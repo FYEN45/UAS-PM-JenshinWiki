@@ -1,0 +1,7 @@
+# JenshinWiki-db
+Database aplikasi JenshinWiki dengan MySQL.
+Hanya perlu import database ke MySQL.
+
+# JenshinWiki-ws
+Webservices aplikasi JenshinWiki dengan PHP.
+Pindahkan folder "JenshinWiki-ws" ke C:\xampp\htdocs\
