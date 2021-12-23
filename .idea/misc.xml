@@ -3,9 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/GitHub/Android Studio/JenshinWiki/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.37864583333333335" />
         <entry key="..\:/GitHub/Android Studio/JenshinWiki/app/src/main/res/layout/activity_home.xml" value="0.3625" />
+        <entry key="..\:/GitHub/Android Studio/JenshinWiki/app/src/main/res/layout/activity_login.xml" value="0.3625" />
+        <entry key="..\:/GitHub/Android Studio/JenshinWiki/app/src/main/res/layout/activity_main.xml" value="0.3484375" />
+        <entry key="..\:/GitHub/Android Studio/JenshinWiki/app/src/main/res/layout/activity_register.xml" value="0.3484375" />
         <entry key="..\:/GitHub/Android Studio/JenshinWiki/app/src/main/res/layout/activity_user_list.xml" value="0.3625" />
         <entry key="..\:/GitHub/Android Studio/JenshinWiki/app/src/main/res/layout/activity_user_update.xml" value="0.3625" />
+        <entry key="..\:/GitHub/Android Studio/JenshinWiki/app/src/main/res/layout/sample_my_view.xml" value="0.3484375" />
+        <entry key="..\:/GitHub/Android Studio/JenshinWiki/app/src/main/res/menu/top_app_bar.xml" value="0.3625" />
       </map>
     </option>
   </component>
