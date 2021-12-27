@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 27 Des 2021 pada 07.16
+-- Waktu pembuatan: 27 Des 2021 pada 10.01
 -- Versi server: 10.4.18-MariaDB
 -- Versi PHP: 8.0.3
 
@@ -72,6 +72,7 @@ INSERT INTO `monsters` (`id`, `monster_name`, `monster_description`, `monster_im
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(100) NOT NULL,
   `status` varchar(10) NOT NULL
@@ -81,8 +82,8 @@ CREATE TABLE `users` (
 -- Dumping data untuk tabel `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `username`, `password`, `status`) VALUES
-(1, 'admin', 'admin', 'admin123', 'admin');
+INSERT INTO `users` (`id`, `name`, `email`, `username`, `password`, `status`) VALUES
+(1, 'admin', 'admin@gmail.com', 'admin', 'admin123', 'admin');
 
 --
 -- Indexes for dumped tables
@@ -104,7 +105,8 @@ ALTER TABLE `monsters`
 -- Indeks untuk tabel `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`,`username`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`,`username`);
 
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
