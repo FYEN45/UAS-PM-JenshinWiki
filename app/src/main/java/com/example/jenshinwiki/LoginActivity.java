@@ -2,6 +2,7 @@ package com.example.jenshinwiki;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -58,15 +59,14 @@ public class LoginActivity extends AppCompatActivity {
         textViewToRegister = findViewById(R.id.textViewToRegister);
     }
 
-    //TODO : PHP login blm dibikin + modif sesuaiin output -FG
     private void requestLoginVerification() {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.userLoginVerification, response -> {
             try {
                 JSONObject jsonObjectResponse = new JSONObject(response);
-                JSONObject headerUser = jsonObjectResponse.getJSONObject("data");
-
                 Toast.makeText(LoginActivity.this, jsonObjectResponse.getString("pesan"), Toast.LENGTH_SHORT).show();
-                if (jsonObjectResponse.getString("pesan").equals("Berhasil Login!")) {
+
+                if (jsonObjectResponse.getString("pesan").equals("Login Berhasil!")) {
+                    JSONObject headerUser = jsonObjectResponse.getJSONObject("user");
                     TempLoginData.Temp_Name = headerUser.getString("name");
                     TempLoginData.Temp_Username = headerUser.getString("username");
                     TempLoginData.Temp_Status = headerUser.getString("status");
@@ -75,7 +75,6 @@ public class LoginActivity extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                 }
-
             } catch (JSONException exception) {
                 exception.printStackTrace();
             }
