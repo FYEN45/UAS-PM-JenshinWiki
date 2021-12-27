@@ -26,6 +26,7 @@
     } else {
         $response['pesan'] = "Login Gagal!";
     }
+    $db->close_DB();
 
     echo json_encode($response);
 ?>
