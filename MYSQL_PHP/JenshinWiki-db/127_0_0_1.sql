@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 27, 2021 at 06:22 AM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.0.13
+-- Waktu pembuatan: 27 Des 2021 pada 07.16
+-- Versi server: 10.4.18-MariaDB
+-- Versi PHP: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -26,7 +26,7 @@ USE `jenshinwiki_db`;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `items`
+-- Struktur dari tabel `items`
 --
 
 CREATE TABLE `items` (
@@ -36,10 +36,17 @@ CREATE TABLE `items` (
   `item_image` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `items`
+--
+
+INSERT INTO `items` (`id`, `item_name`, `item_description`, `item_image`) VALUES
+('JWI1', 'Wind Catcher', 'Dapat menampung Anemogranum dan menggunakan kekuatan yang ada di dalam Anemogranum untuk menciptakan arus angin.\r\n\r\nPara ahli Knights of Favonius menciptakan alat ini untuk memanfaatkan berkah dari Archon Anemo dan mempermudah Outrider dan para Knight dalam bertualang dan melakukan pengintaian.\r\n\r\nTetapi setiap pengguna Wind Glider harus memiliki Surat Izin Meluncur, sehingga manfaat dari alat ini cukup terbatas.', 'https://genshin.honeyhunterworld.com/img/gadget/i_3004.png');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `monsters`
+-- Struktur dari tabel `monsters`
 --
 
 CREATE TABLE `monsters` (
@@ -49,10 +56,17 @@ CREATE TABLE `monsters` (
   `monster_image` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `monsters`
+--
+
+INSERT INTO `monsters` (`id`, `monster_name`, `monster_description`, `monster_image`) VALUES
+('JWM1', 'Dvalin', 'Dvalin, sang Dragon of the East, salah satu dari Four Winds di Mondstadt.\r\n\r\nSeiring berjalannya waktu di tengah-tengah kegelapan pekat, bahkan batu permata paling berkilau sekalipun akan tertutup oleh debu, dan seekor naga yang mulia pun akan terjerat dalam rasa benci dan dendam.\r\n\r\nTapi kalian harus selalu ingat bahwa debu dapat dibersihkan dan rasa benci ataupun dendam yang meracuni dapat disingkirkan.', 'https://genshin.honeyhunterworld.com/img/enemy/m_29010101.png');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktur dari tabel `users`
 --
 
 CREATE TABLE `users` (
@@ -64,7 +78,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `users`
+-- Dumping data untuk tabel `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `password`, `status`) VALUES
@@ -75,29 +89,29 @@ INSERT INTO `users` (`id`, `name`, `username`, `password`, `status`) VALUES
 --
 
 --
--- Indexes for table `items`
+-- Indeks untuk tabel `items`
 --
 ALTER TABLE `items`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `monsters`
+-- Indeks untuk tabel `monsters`
 --
 ALTER TABLE `monsters`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
+-- Indeks untuk tabel `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`,`username`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
