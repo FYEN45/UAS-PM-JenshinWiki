@@ -24,18 +24,18 @@ public class HomeActivity extends AppCompatActivity {
         FloatingActionButton FloatingActionButtonWebsite    = findViewById(R.id.floatingActionButtonWebsite);
 
         //intent materialcard di activity home ke halaman list boss
-        materialCardViewBoss.setOnClickListener(view -> {
+        /*materialCardViewBoss.setOnClickListener(view -> {
             Intent intent = new Intent(HomeActivity.this, .class);
             startActivity(intent);
             finish();
-        });
+        });*/
 
         //intent materialcard item dari activity home ke halaman list item
-        materialCardViewItem.setOnClickListener(view -> {
+      /*  materialCardViewItem.setOnClickListener(view -> {
             Intent intent = new Intent(HomeActivity.this, .class);
             startActivity(intent);
             finish();
-        });
+        });*/
 
         //intent materialcard userlist dari activity home ke halaman userlist
         materialCardViewUserlist.setOnClickListener(view -> {
