@@ -75,10 +75,17 @@ public class UserUpdateActivity extends AppCompatActivity {
         editTextUserUpdateUsername.setText(intent.getStringExtra("username"));
         editTextUserUpdatePassword.setText(intent.getStringExtra("password"));
 
+        
         if (intent.getStringExtra("status").equals("admin")){
             toggleButtonUserUpdateStatus.setChecked(true); //true = admin, false = user
         } else {
             toggleButtonUserUpdateStatus.setChecked(false); //true = admin, false = user
+        }
+
+        //Kalau ngebuka akun yang lagi login, akses buat ganti status dan delete di hilangkan!
+        if(TempLoginData.Temp_Username.equals(intent.getStringExtra("username"))){
+            toggleButtonUserUpdateStatus.setEnabled(false);
+            buttonUserUpdateDelete.setEnabled(false);
         }
     };
 
