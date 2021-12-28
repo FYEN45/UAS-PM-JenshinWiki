@@ -6,6 +6,6 @@ public interface Config {
 
     public String userLoginVerification = "http://"+ serverIp +"/JenshinWiki-ws/userLoginVerification.php/";
     public String userRegister          = "http://"+ serverIp +"/JenshinWiki-ws/userRegister.php/";
-    public String userListRequest       = "";
-    public String userUpdateRequest     = "";
+    public String requestUserList       = "http://"+ serverIp +"/JenshinWiki-ws/requestUserList.php/";
+    public String requestUserUpdate     = "http://"+ serverIp +"/JenshinWiki-ws/requestUserUpdate.php/\";";
 }

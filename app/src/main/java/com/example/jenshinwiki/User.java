@@ -6,17 +6,14 @@ public class User {
     private String email;
     private String username;
     private String password;
+    private String status;
 
-    public User(String id, String name, String email, String username, String password) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
-        this.username = username;
-        this.password = password;
+    public String getStatus() {
+        return status;
     }
 
-    public User() {
-
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getId() {

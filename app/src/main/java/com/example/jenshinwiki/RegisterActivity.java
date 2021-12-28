@@ -80,10 +80,10 @@ public class RegisterActivity extends AppCompatActivity {
                 @Override
                 protected Map<String, String> getParams() {
                     Map<String, String> params = new HashMap<>();
-                    params.put("name", String.valueOf(editTextRegisterName.getText()));
-                    params.put("email", String.valueOf(editTextRegisterEmail.getText()));
-                    params.put("username", String.valueOf(editTextRegisterUsername.getText()));
-                    params.put("password", String.valueOf(editTextRegisterPassword.getText()));
+                    params.put("name", String.valueOf(editTextRegisterName.getText()).trim());
+                    params.put("email", String.valueOf(editTextRegisterEmail.getText()).trim());
+                    params.put("username", String.valueOf(editTextRegisterUsername.getText()).trim());
+                    params.put("password", String.valueOf(editTextRegisterPassword.getText()).trim());
                     return params;
                 }
             };
