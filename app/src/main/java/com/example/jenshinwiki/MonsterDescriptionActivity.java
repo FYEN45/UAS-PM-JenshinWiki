@@ -13,11 +13,8 @@ import com.squareup.picasso.Picasso;
 public class MonsterDescriptionActivity extends AppCompatActivity {
     ImageView imageView;
     TextView textViewID;
-    TextView editTextName;
-    TextView editTextDescription;
-
-    String action;
-
+    TextView textViewName;
+    TextView textViewDescription;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,15 +28,15 @@ public class MonsterDescriptionActivity extends AppCompatActivity {
     private void initViews(){
         imageView = findViewById(R.id.description_monsterImage);
         textViewID = findViewById(R.id.description_monsterId);
-        editTextName = findViewById(R.id.description_monsterName);
-        editTextDescription = findViewById(R.id.description_monsterDestription);
+        textViewName = findViewById(R.id.description_monsterName);
+        textViewDescription = findViewById(R.id.description_monsterDestription);
     }
 
     private void receiveData(){
         Intent intent = getIntent();
         textViewID.setText(intent.getStringExtra("id"));
-        editTextName.setText(intent.getStringExtra("name"));
-        editTextDescription.setText(intent.getStringExtra("description"));
+        textViewName.setText(intent.getStringExtra("name"));
+        textViewDescription.setText(intent.getStringExtra("description"));
         String url = intent.getStringExtra("image");
         Picasso.get().load(url).into(imageView);
     }
