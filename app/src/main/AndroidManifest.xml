@@ -15,6 +15,9 @@
             android:name=".UserUpdateActivity"
             android:exported="false" />
         <activity
+            android:name=".MonsterListActivity"
+            android:exported="false" />
+        <activity
             android:name=".UserListActivity"
             android:exported="false" />
         <activity

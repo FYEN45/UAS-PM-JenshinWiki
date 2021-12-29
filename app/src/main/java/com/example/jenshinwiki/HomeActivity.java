@@ -27,10 +27,10 @@ public class HomeActivity extends AppCompatActivity {
         enableCardviewForAdmin();
 
         //intent materialcard di activity home ke halaman list boss
-        /*materialCardViewBoss.setOnClickListener(view -> {
-            Intent intent = new Intent(HomeActivity.this, .class);
+        materialCardViewBoss.setOnClickListener(view -> {
+            Intent intent = new Intent(HomeActivity.this, MonsterListActivity.class);
             startActivity(intent);
-        });*/
+        });
 
         //intent materialcard item dari activity home ke halaman list item
       /*  materialCardViewItem.setOnClickListener(view -> {

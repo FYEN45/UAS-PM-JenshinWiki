@@ -25,7 +25,7 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/textViewName"
+            android:id="@+id/monsterName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="5dp"

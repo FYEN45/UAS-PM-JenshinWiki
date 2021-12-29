@@ -6,16 +6,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class UserAdapter extends BaseAdapter {
+public class MonsterAdapter extends BaseAdapter {
     private static LayoutInflater inflater = null;
     private final Activity activity;
-    private ArrayList<User> arraylist_data = new ArrayList<>();
+    private ArrayList<Monster> arraylist_data = new ArrayList<>();
 
-    public UserAdapter(Activity a, ArrayList<User> d) {
+
+    public MonsterAdapter(Activity a, ArrayList<Monster> d) {
         activity = a;
         arraylist_data = d;
         inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -40,15 +44,16 @@ public class UserAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         View vi = convertView;
         if (convertView == null) {
-            vi = inflater.inflate(R.layout.user_item, null);
+            vi = inflater.inflate(R.layout.layout_rows, null);
         }
 
         TextView textViewName = vi.findViewById(R.id.monsterName);
-        TextView textViewId = vi.findViewById(R.id.textViewId);
+        ImageView img = vi.findViewById(R.id.monsterImage);
 
-        User users = arraylist_data.get(position);
-        textViewId.setText(users.getId());
-        textViewName.setText(users.getName());
+        Monster modelList = arraylist_data.get(position);
+        textViewName.setText(modelList.getMonster_name());
+        String url = modelList.getMonster_image();
+        Picasso.get().load(url).into(img);
         return vi;
     }
 }
