@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ListView;
 
 import com.android.volley.Request;
@@ -32,7 +33,13 @@ public class ItemListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_item_list);
 
         mItemView = findViewById(R.id.listviewItem);
+
         floatingActionButtonAddItem = findViewById(R.id.fab_addItem);
+        if (TempLoginData.Temp_Status.equals("admin")) {
+            floatingActionButtonAddItem.setVisibility(View.VISIBLE);
+        }else{
+            floatingActionButtonAddItem.setVisibility(View.GONE);
+        }
         request();
 
         mItemView.setOnItemClickListener((parent, view, position, id) -> {

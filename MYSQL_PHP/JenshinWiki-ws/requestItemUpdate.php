@@ -38,7 +38,7 @@
         if(mysqli_query($db->connect_DB(),$query)){
             echo "Berhasil menghapus ".$parameter['item_name'];
         } else {
-            echo "Gagal menghapus ".$parameter['item_name'];s
+            echo "Gagal menghapus ".$parameter['item_name'];
         }
     }
     $db->close_DB();

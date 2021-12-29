@@ -2,6 +2,7 @@ package com.example.jenshinwiki;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,6 +34,12 @@ public class MonsterListActivity extends AppCompatActivity {
 
         mListView = findViewById(R.id.listviewMonster);
         floatingActionButtonAddMonster = findViewById(R.id.fab_addMonster);
+        if (TempLoginData.Temp_Status.equals("admin")) {
+            floatingActionButtonAddMonster.setVisibility(View.VISIBLE);
+        }else{
+            floatingActionButtonAddMonster.setVisibility(View.GONE);
+        }
+
         request();
 
         mListView.setOnItemClickListener((parent, view, position, id) -> {
