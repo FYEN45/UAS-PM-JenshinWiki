@@ -1,14 +1,13 @@
 package com.example.jenshinwiki;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.android.volley.Request;
-import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.StringRequest;
 import com.example.jenshinwiki.Config.Config;
 import com.example.jenshinwiki.Controller.AppController;
@@ -33,7 +32,7 @@ public class UserListActivity extends AppCompatActivity {
         requestUserData();
 
         listViewUser.setOnItemClickListener((parent, view, position, id) -> {
-            if(TempLoginData.Temp_Status.equals("admin")){
+            if (TempLoginData.Temp_Status.equals("admin")) {
                 Intent intent = new Intent(UserListActivity.this, UserUpdateActivity.class);
                 intent.putExtra("id", arrayListUser.get(position).getId());
                 intent.putExtra("name", arrayListUser.get(position).getName());
@@ -48,11 +47,11 @@ public class UserListActivity extends AppCompatActivity {
         });
     }
 
-    private void initViews(){
+    private void initViews() {
         listViewUser = findViewById(R.id.listViewUser);
     }
 
-    private void requestUserData(){
+    private void requestUserData() {
         StringRequest stringRequest = new StringRequest(Request.Method.GET, Config.requestUserList, responses -> {
             try {
                 JSONObject response = new JSONObject(responses);

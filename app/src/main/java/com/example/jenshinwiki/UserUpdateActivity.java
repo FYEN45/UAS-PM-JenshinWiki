@@ -1,7 +1,5 @@
 package com.example.jenshinwiki;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -9,8 +7,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.android.volley.Request;
-import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.StringRequest;
 import com.example.jenshinwiki.Config.Config;
 import com.example.jenshinwiki.Controller.AppController;
@@ -53,7 +52,7 @@ public class UserUpdateActivity extends AppCompatActivity {
         });
     }
 
-    private void initViews(){
+    private void initViews() {
         textInputLayoutUserUpdateName = findViewById(R.id.textInputLayoutUpdateName);
         textInputLayoutUserUpdateEmail = findViewById(R.id.textInputLayoutUpdateEmail);
         textInputLayoutUserUpdateUsername = findViewById(R.id.textInputLayoutUpdateUsername);
@@ -67,7 +66,7 @@ public class UserUpdateActivity extends AppCompatActivity {
         buttonUserUpdateDelete = findViewById(R.id.buttonDelete);
     }
 
-    private void receiveData(){
+    private void receiveData() {
         Intent intent = getIntent();
         id = intent.getStringExtra("id");
         editTextUserUpdateName.setText(intent.getStringExtra("name"));
@@ -75,21 +74,18 @@ public class UserUpdateActivity extends AppCompatActivity {
         editTextUserUpdateUsername.setText(intent.getStringExtra("username"));
         editTextUserUpdatePassword.setText(intent.getStringExtra("password"));
 
-        
-        if (intent.getStringExtra("status").equals("admin")){
-            toggleButtonUserUpdateStatus.setChecked(true); //true = admin, false = user
-        } else {
-            toggleButtonUserUpdateStatus.setChecked(false); //true = admin, false = user
-        }
+
+        //true = admin, false = user
+        toggleButtonUserUpdateStatus.setChecked(intent.getStringExtra("status").equals("admin")); //true = admin, false = user
 
         //Kalau ngebuka akun yang lagi login, akses buat ganti status dan delete di hilangkan!
-        if(TempLoginData.Temp_Username.equals(intent.getStringExtra("username"))){
+        if (TempLoginData.Temp_Username.equals(intent.getStringExtra("username"))) {
             toggleButtonUserUpdateStatus.setEnabled(false);
             buttonUserUpdateDelete.setEnabled(false);
         }
-    };
+    }
 
-    private void requestUpdateData(){
+    private void requestUpdateData() {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.requestUserUpdate, responses -> {
             Toast.makeText(UserUpdateActivity.this, responses, Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(UserUpdateActivity.this, UserListActivity.class);
@@ -109,7 +105,7 @@ public class UserUpdateActivity extends AppCompatActivity {
                 params.put("email", String.valueOf(editTextUserUpdateEmail.getText()));
                 params.put("username", String.valueOf(editTextUserUpdateUsername.getText()));
                 params.put("password", String.valueOf(editTextUserUpdatePassword.getText()));
-                if(toggleButtonUserUpdateStatus.isChecked()){
+                if (toggleButtonUserUpdateStatus.isChecked()) {
                     params.put("status", "admin");
                 } else {
                     params.put("status", "user");

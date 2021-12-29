@@ -1,7 +1,5 @@
 package com.example.jenshinwiki;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -10,8 +8,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.android.volley.Request;
-import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.StringRequest;
 import com.example.jenshinwiki.Config.Config;
 import com.example.jenshinwiki.Controller.AppController;
@@ -50,7 +49,7 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
-    private void initViews(){
+    private void initViews() {
         textInputLayoutRegisterName = findViewById(R.id.textInputLayoutRegisterName);
         textInputLayoutRegisterEmail = findViewById(R.id.textInputLayoutRegisterEmail);
         textInputLayoutRegisterUsername = findViewById(R.id.textInputLayoutRegisterUsername);
@@ -63,7 +62,7 @@ public class RegisterActivity extends AppCompatActivity {
         textViewToLogin = findViewById(R.id.textViewToLogin);
     }
 
-    private void requestUserRegister(){
+    private void requestUserRegister() {
         if (validateName() && validateEmail() && validateUsername() && validatePassword()) {
             StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.userRegister, responses -> {
                 if (responses.equals("Registrasi Berhasil!")) {
@@ -91,7 +90,7 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 
-    private boolean validateName(){
+    private boolean validateName() {
         boolean validname = true;
         if (editTextRegisterName.getText().toString().isEmpty()) {
             validname = false;
@@ -102,24 +101,23 @@ public class RegisterActivity extends AppCompatActivity {
         return validname;
     }
 
-    private boolean validateEmail(){
+    private boolean validateEmail() {
         boolean validemail = true;
         if (editTextRegisterEmail.getText().toString().isEmpty()) {
             validemail = false;
             textInputLayoutRegisterEmail.setError("Email kosong!");
-        } else
-            if (!Patterns.EMAIL_ADDRESS.matcher(editTextRegisterEmail.getText().toString()).matches()) {
-                validemail = false;
-                textInputLayoutRegisterEmail.setError("Format Email tidak Valid!");
-            } else {
-                textInputLayoutRegisterEmail.setError(null);
-            }
+        } else if (!Patterns.EMAIL_ADDRESS.matcher(editTextRegisterEmail.getText().toString()).matches()) {
+            validemail = false;
+            textInputLayoutRegisterEmail.setError("Format Email tidak Valid!");
+        } else {
+            textInputLayoutRegisterEmail.setError(null);
+        }
         return validemail;
     }
 
-    private boolean validateUsername(){
+    private boolean validateUsername() {
         boolean validusername = true;
-        if(editTextRegisterUsername.getText().toString().isEmpty()){
+        if (editTextRegisterUsername.getText().toString().isEmpty()) {
             validusername = false;
             textInputLayoutRegisterUsername.setError("Username kosong!");
         } else {
@@ -133,9 +131,9 @@ public class RegisterActivity extends AppCompatActivity {
         return validusername;
     }
 
-    private boolean validatePassword(){
+    private boolean validatePassword() {
         boolean validpass = true;
-        if(editTextRegisterPassword.getText().toString().isEmpty()){
+        if (editTextRegisterPassword.getText().toString().isEmpty()) {
             validpass = false;
             textInputLayoutRegisterPassword.setError("Password kosong!");
         } else {

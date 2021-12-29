@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+//Penjelasan : MainActivity.java digunakan untuk menampilkan gambar dan tulisan dalam waktu 3 detik.
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -14,15 +15,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Penjelasan : Membuat object runnable untuk menjalankan method intentLogin.
         Runnable r = new Runnable() {
             @Override
             public void run() {
                 intentLogin();
             }
         };
+
+        //Penjelasan : Membuat object handler dan meminta handler untuk melakukan delay selama 3 detik.
+        // Setelah itu menjalankan perintah yang telah ditentukan runnable.
         Handler handler = new Handler();
         handler.postDelayed(r, 3000);
 
+        //Penjelasan : Mendeklarasikan, Menginisialisasikan, dan Memberikan fungsi kepada splash Text,
+        // dimana saat splashText ditekan, menghentikan perintah yang dijalankan handler dan melakukan
+        // intent ke halaman Login tanpa harus menunggu 3 detik.
         TextView splashText = findViewById(R.id.textViewSplash);
         splashText.setOnClickListener(v -> {
             handler.removeCallbacks(r);
@@ -30,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    //Penjelasan : Method intentLogin digunakan untuk melakukan perpindahan halaman dari halaman Splash
+    // ke halaman Login.
     public void intentLogin() {
         Intent intent = new Intent(MainActivity.this, LoginActivity.class);
         startActivity(intent);

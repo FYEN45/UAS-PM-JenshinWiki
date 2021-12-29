@@ -2,7 +2,6 @@ package com.example.jenshinwiki;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -22,8 +21,15 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+//Penjelasan : LoginActivity.java difokuskan untuk memberikan akses kepada user untuk melakukan Login
+// agar dapat mengakses halaman lain dalam Aplikasi.
+// Pada kelas ini, user akan diminta untuk melakukan input berupa username dan password yang akan
+// dikirimkan ke webservices untuk dilakukan verifikasi.
+// Pada kelas ini juga, data user yang berhasil login akan disimpan secara temporary untuk keperluan lebih lanjut.
+
 public class LoginActivity extends AppCompatActivity {
 
+    //Penjelasan : Deklarasi komponen dalam Layout Login Activity.
     TextInputLayout textInputLayoutLoginUsername;
     TextInputLayout textInputLayoutLoginPassword;
     EditText editTextLoginUsername;
@@ -35,21 +41,27 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        initViews(); //Memanggil method initViews;
 
-        initViews();
-
+        //Penjelasan : Menyatakan fungsi ketika button Login ditekan.
+        // Saat button ditekan, validasi Username dan Password akan dijalankan, lalu
+        // aplikasi akan menjalankan method requestLoginVerification.
         buttonLogin.setOnClickListener(v -> {
             if (validateUsername() && validatePassword()) {
-                requestLoginVerification();
+                requestLoginVerification(); //Memanggil method requestLoginVerification.
             }
         });
 
+        //Penjelasan : Menyatakan fungsi ketika textViewToRegister ditekan.
+        // Saat text view ini ditekan, tampilan interface akan diarahkan ke halaman Register.
         textViewToRegister.setOnClickListener(v -> {
             Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
             startActivity(intent);
         });
     }
 
+    //Penjelasan : Method initViews digunakan untuk meng-inisialisasikan komponen - komponen dalam
+    // layout sehingga java dapat mengakses komponen tersebut.
     private void initViews() {
         textInputLayoutLoginUsername = findViewById(R.id.textInputLayoutLoginUsername);
         textInputLayoutLoginPassword = findViewById(R.id.textInputLayoutLoginPassword);
@@ -59,18 +71,32 @@ public class LoginActivity extends AppCompatActivity {
         textViewToRegister = findViewById(R.id.textViewToRegister);
     }
 
+    //Penjelasan : Method requestLoginVerification akan mencoba untuk mengirimkan data berupa
+    // username dan password untuk dilakukan verifikasi pada webservices.
+    // Setelah itu aplikasi akan menerima respon dari webservices. Respon ini digunakan untuk
+    // menentukan apakah user diijinkan untuk masuk ke halaman Home atau tidak.
     private void requestLoginVerification() {
+        //Penjelasan : StringRequest merupakan sebuah bentuk request / permintaan kepada webservices.
         StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.userLoginVerification, response -> {
             try {
                 JSONObject jsonObjectResponse = new JSONObject(response);
                 Toast.makeText(LoginActivity.this, jsonObjectResponse.getString("pesan"), Toast.LENGTH_SHORT).show();
 
+                //Penjelasan : Memeriksa respon dari webservices.
+                // Apabila respon pesan berupa "Login Berhasil!", maka user akan mendapat akses untuk
+                // berpindah ke halaman Home.
                 if (jsonObjectResponse.getString("pesan").equals("Login Berhasil!")) {
                     JSONObject headerUser = jsonObjectResponse.getJSONObject("user");
+
+                    //Penjelasan : Kelas TempLoginData disini digunakan untuk menyimpan data secara Temporary.
+                    // Data - data yang disimpan adalah data user yang berhasil melakukan login, dimana
+                    // data tersebut berupa Nama, Username, dan Status dari user.
                     TempLoginData.Temp_Name = headerUser.getString("name");
                     TempLoginData.Temp_Username = headerUser.getString("username");
                     TempLoginData.Temp_Status = headerUser.getString("status");
 
+
+                    //Penjelasan : Melakukan pemindahan halaman dari halaman Login ke halaman Home.
                     Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                     startActivity(intent);
                     finish();
@@ -79,8 +105,12 @@ public class LoginActivity extends AppCompatActivity {
                 exception.printStackTrace();
             }
         }, error -> {
+            //Penjelasan : Apabila aplikasi gagal terhubung dengan webservices, pada aplikasi akan menampilkan
+            // informasi kepada user.
             Toast.makeText(LoginActivity.this, "Gagal Terhubung dengan Server!", Toast.LENGTH_SHORT).show();
         }) {
+            //Penjelasan : Baris kode berikut digunakan sebagai data - data yang akan dikirimkan ke webservices
+            // untuk diproses. Dalam Login, username dan password dikirim untuk melakukan verifikasi.
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<>();
@@ -89,6 +119,7 @@ public class LoginActivity extends AppCompatActivity {
                 return params;
             }
         };
+        //Penjelasan : Menjalankan permintaan untuk melakukan koneksi dengan webservices.
         AppController.getInstance(getApplicationContext()).addToRequestQueue(stringRequest);
     }
 
