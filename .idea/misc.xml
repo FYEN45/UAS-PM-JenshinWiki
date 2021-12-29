@@ -4,7 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Felix/Kuliah/Semester 5/1. Pemrograman Mobile/UAS-PM-JenshinWiki/app/src/main/res/layout/activity_home.xml" value="0.2234375" />
+        <entry key="..\:/Felix/Kuliah/Semester 5/1. Pemrograman Mobile/UAS-PM-JenshinWiki/app/src/main/res/layout/activity_item_description.xml" value="0.20625" />
+        <entry key="..\:/Felix/Kuliah/Semester 5/1. Pemrograman Mobile/UAS-PM-JenshinWiki/app/src/main/res/layout/activity_item_list.xml" value="0.2234375" />
+        <entry key="..\:/Felix/Kuliah/Semester 5/1. Pemrograman Mobile/UAS-PM-JenshinWiki/app/src/main/res/layout/activity_item_update.xml" value="0.20625" />
+        <entry key="..\:/Felix/Kuliah/Semester 5/1. Pemrograman Mobile/UAS-PM-JenshinWiki/app/src/main/res/layout/activity_login.xml" value="0.2234375" />
+        <entry key="..\:/Felix/Kuliah/Semester 5/1. Pemrograman Mobile/UAS-PM-JenshinWiki/app/src/main/res/layout/activity_monster_description.xml" value="0.264" />
         <entry key="..\:/Felix/Kuliah/Semester 5/1. Pemrograman Mobile/UAS-PM-JenshinWiki/app/src/main/res/layout/activity_monster_list.xml" value="0.2234375" />
+        <entry key="..\:/Felix/Kuliah/Semester 5/1. Pemrograman Mobile/UAS-PM-JenshinWiki/app/src/main/res/layout/activity_monster_update.xml" value="0.264" />
+        <entry key="..\:/Felix/Kuliah/Semester 5/1. Pemrograman Mobile/UAS-PM-JenshinWiki/app/src/main/res/layout/activity_register.xml" value="0.2234375" />
         <entry key="..\:/Felix/Kuliah/Semester 5/1. Pemrograman Mobile/UAS-PM-JenshinWiki/app/src/main/res/layout/activity_user_list.xml" value="0.2234375" />
         <entry key="..\:/Felix/Kuliah/Semester 5/1. Pemrograman Mobile/UAS-PM-JenshinWiki/app/src/main/res/layout/activity_user_update.xml" value="0.2234375" />
         <entry key="..\:/Felix/Kuliah/Semester 5/1. Pemrograman Mobile/UAS-PM-JenshinWiki/app/src/main/res/layout/layout_rows.xml" value="0.2234375" />

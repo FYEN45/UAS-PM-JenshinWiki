@@ -12,6 +12,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JenshinWiki">
         <activity
+            android:name=".ItemUpdateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ItemDescriptionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ItemListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MonsterUpdateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MonsterDescriptionActivity"
+            android:exported="false" />
+        <activity
             android:name=".UserUpdateActivity"
             android:exported="false" />
         <activity

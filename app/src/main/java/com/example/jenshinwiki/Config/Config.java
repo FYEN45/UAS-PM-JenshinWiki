@@ -11,5 +11,8 @@ public interface Config {
     String userRegister = "http://" + serverIp + "/JenshinWiki-ws/userRegister.php/";
     String requestUserList = "http://" + serverIp + "/JenshinWiki-ws/requestUserList.php/";
     String requestUserUpdate = "http://" + serverIp + "/JenshinWiki-ws/requestUserUpdate.php/";
-    String requestMonsterList = "http://" + serverIp + "/JenshinWiki-ws/request_monster_list.php/";
+    String requestMonsterList = "http://" + serverIp + "/JenshinWiki-ws/requestMonsterList.php/";
+    String requestMonsterUpdate = "http://" + serverIp + "/JenshinWiki-ws/requestMonsterUpdate.php/";
+    String requestItemList = "http://" + serverIp + "/JenshinWiki-ws/requestItemList.php/";
+    String requestItemUpdate = "http://" + serverIp + "/JenshinWiki-ws/requestItemUpdate.php/";
 }

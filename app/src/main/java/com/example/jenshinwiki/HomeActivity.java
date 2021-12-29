@@ -33,10 +33,10 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         //intent materialcard item dari activity home ke halaman list item
-      /*  materialCardViewItem.setOnClickListener(view -> {
-            Intent intent = new Intent(HomeActivity.this, .class);
+        materialCardViewItem.setOnClickListener(view -> {
+            Intent intent = new Intent(HomeActivity.this, ItemListActivity.class);
             startActivity(intent);
-        });*/
+        });
 
         materialCardViewUserlist.setOnClickListener(view -> {
             Intent intent = new Intent(HomeActivity.this, UserListActivity.class);
@@ -69,7 +69,7 @@ public class HomeActivity extends AppCompatActivity {
         materialCardViewBoss = findViewById(R.id.materialCardViewBoss);
         materialCardViewItem = findViewById(R.id.materialCardViewItem);
         materialCardViewUserlist = findViewById(R.id.materialCardViewUserlist);
-        FloatingActionButtonWebsite = findViewById(R.id.floatingActionButtonWebsite);
+        FloatingActionButtonWebsite = findViewById(R.id.fab_addItem);
     }
 
     private void enableCardviewForAdmin() {

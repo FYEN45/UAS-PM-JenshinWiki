@@ -1,10 +1,10 @@
 package com.example.jenshinwiki;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListView;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.Request;
 import com.android.volley.VolleyLog;
@@ -19,48 +19,48 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class MonsterListActivity extends AppCompatActivity {
-    ListView mListView;
-    ArrayList<Monster> mListItems = new ArrayList<>();
-    FloatingActionButton floatingActionButtonAddMonster;
+public class ItemListActivity extends AppCompatActivity {
+    ListView mItemView;
+    ArrayList<Item> mListItems = new ArrayList<>();
+    FloatingActionButton floatingActionButtonAddItem;
 
     private final String TAG = MainActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_monster_list);
+        setContentView(R.layout.activity_item_list);
 
-        mListView = findViewById(R.id.listviewMonster);
-        floatingActionButtonAddMonster = findViewById(R.id.fab_addMonster);
+        mItemView = findViewById(R.id.listviewItem);
+        floatingActionButtonAddItem = findViewById(R.id.fab_addItem);
         request();
 
-        mListView.setOnItemClickListener((parent, view, position, id) -> {
+        mItemView.setOnItemClickListener((parent, view, position, id) -> {
             if (TempLoginData.Temp_Status.equals("admin")) {
-                Intent intent = new Intent(MonsterListActivity.this, MonsterUpdateActivity.class);
+                Intent intent = new Intent(ItemListActivity.this, ItemUpdateActivity.class);
                 intent.putExtra("id", mListItems.get(position).getId());
-                intent.putExtra("name", mListItems.get(position).getMonster_name());
-                intent.putExtra("description", mListItems.get(position).getMonster_description());
-                intent.putExtra("image", mListItems.get(position).getMonster_image());
+                intent.putExtra("name", mListItems.get(position).getItem_name());
+                intent.putExtra("description", mListItems.get(position).getItem_description());
+                intent.putExtra("image", mListItems.get(position).getItem_image());
                 startActivity(intent);
             }else{
-                Intent intent = new Intent(MonsterListActivity.this, MonsterDescriptionActivity.class);
+                Intent intent = new Intent(ItemListActivity.this, ItemDescriptionActivity.class);
                 intent.putExtra("id", mListItems.get(position).getId());
-                intent.putExtra("name", mListItems.get(position).getMonster_name());
-                intent.putExtra("description", mListItems.get(position).getMonster_description());
-                intent.putExtra("image", mListItems.get(position).getMonster_image());
+                intent.putExtra("name", mListItems.get(position).getItem_name());
+                intent.putExtra("description", mListItems.get(position).getItem_description());
+                intent.putExtra("image", mListItems.get(position).getItem_image());
                 startActivity(intent);
             }
         });
 
-        floatingActionButtonAddMonster.setOnClickListener(view -> {
-            Intent intent = new Intent(MonsterListActivity.this, MonsterUpdateActivity.class);
+        floatingActionButtonAddItem.setOnClickListener(view -> {
+            Intent intent = new Intent(ItemListActivity.this, ItemUpdateActivity.class);
             startActivity(intent);
         });
     }
 
     private void request(){
-        StringRequest strReq = new StringRequest(Request.Method.GET, Config.requestMonsterList, responses -> {
+        StringRequest strReq = new StringRequest(Request.Method.GET, Config.requestItemList, responses -> {
             try {
                 JSONObject response = new JSONObject(responses);
                 JSONObject header = response.getJSONObject("data");
@@ -69,14 +69,14 @@ public class MonsterListActivity extends AppCompatActivity {
                     String key = iterator.next();
                     JSONObject data = (JSONObject) header.get(key);
 
-                    Monster model = new Monster();
+                    Item model = new Item();
                     model.setId(data.getString("id"));
-                    model.setMonster_name(data.getString("monster_name"));
-                    model.setMonster_description(data.getString("monster_description"));
-                    model.setMonster_image(data.getString("monster_image"));
+                    model.setItem_name(data.getString("item_name"));
+                    model.setItem_description(data.getString("item_description"));
+                    model.setItem_image(data.getString("item_image"));
                     mListItems.add(model);
                 }
-                mListView.setAdapter(new MonsterAdapter(MonsterListActivity.this, mListItems));
+                mItemView.setAdapter(new ItemAdapter(ItemListActivity.this, mListItems));
             } catch (JSONException e) {
                 e.printStackTrace();
             }
