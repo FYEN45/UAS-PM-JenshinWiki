@@ -25,7 +25,9 @@ public class Monster {
         return monster_description;
     }
 
-    public void setMonster_description(String monster_description) { this.monster_description = monster_description; }
+    public void setMonster_description(String monster_description) {
+        this.monster_description = monster_description;
+    }
 
     public String getMonster_image() {
         return monster_image;
