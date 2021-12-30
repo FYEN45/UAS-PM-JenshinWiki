@@ -1,5 +1,7 @@
 package com.example.jenshinwiki;
 
+//Ini merupakan object Monster yang memiliki variable : id, monster_name, monster_description,
+//monster_image. Yang dilengkapi dengan getter dan setter untuk masing - masing variblenya
 public class Monster {
     String id, monster_name, monster_description, monster_image;
 
@@ -23,9 +25,7 @@ public class Monster {
         return monster_description;
     }
 
-    public void setMonster_description(String monster_description) {
-        this.monster_description = monster_description;
-    }
+    public void setMonster_description(String monster_description) { this.monster_description = monster_description; }
 
     public String getMonster_image() {
         return monster_image;

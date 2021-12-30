@@ -44,15 +44,19 @@ public class ItemAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         View vi = convertView;
         if (convertView == null) {
+            //Memanggil layout rows untuk menampilkan gambar dan nama item sesuai position
             vi = inflater.inflate(R.layout.layout_rows, null);
         }
-
+        //Memanggil komponen yang ada pada layout rows, menggunakan inflater
         TextView textViewName = vi.findViewById(R.id.monsterName);
         ImageView img = vi.findViewById(R.id.monsterImage);
 
+        //Memberikan nilai pada komponen, yang diambil dari database menggunakan Getter pada Item.java
         Item itemList = arraylist_data.get(position);
         textViewName.setText(itemList.getItem_name());
         String url = itemList.getItem_image();
+        /*Mengkonversikan image yang tadinya berupa link url,
+        sehingga dapat ditampilkan pada image view, memakai library Picasso*/
         Picasso.get().load(url).into(img);
         return vi;
     }
