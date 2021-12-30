@@ -40,13 +40,18 @@ public class UserAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         View vi = convertView;
         if (convertView == null) {
+            //Memanggil layout rows untuk menampilkan gambar dan nama user sesuai position
             vi = inflater.inflate(R.layout.user_item, null);
         }
 
+        //Men-deklarasi dan menginisialisasikan komponen yang digunakan pada baris data user.
         TextView textViewName = vi.findViewById(R.id.monsterName);
         TextView textViewId = vi.findViewById(R.id.textViewId);
 
+        //Mengambil data dari arrayList_data dan menyimpannya untuk ditampilkan.
         User users = arraylist_data.get(position);
+
+        //Menampilkan data user yang telah diambil dari array list
         textViewId.setText(users.getId());
         textViewName.setText(users.getName());
         return vi;

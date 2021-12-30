@@ -23,24 +23,29 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        initViews();
-        enableCardviewForAdmin();
+        initViews(); //Memanggil method initViews.
+        enableCardviewForAdmin(); //Memanggil method enableCardviewForAdmin
 
+        //Memberikan fungsi untuk card view boss untuk berpindah ke halaman Monster List.
         materialCardViewBoss.setOnClickListener(view -> {
             Intent intent = new Intent(HomeActivity.this, MonsterListActivity.class);
             startActivity(intent);
         });
 
+        //Memberikan fungsi untuk card view item untuk berpindah ke halaman Item List.
         materialCardViewItem.setOnClickListener(view -> {
             Intent intent = new Intent(HomeActivity.this, ItemListActivity.class);
             startActivity(intent);
         });
 
+        //Memberikan fungsi untuk card view user list untuk berpindah ke halaman User List.
         materialCardViewUserlist.setOnClickListener(view -> {
             Intent intent = new Intent(HomeActivity.this, UserListActivity.class);
             startActivity(intent);
         });
 
+        //Memberikan fungsi untuk FloatingActionButtonWebsite untuk mengarahkan user ke website
+        // Genshin Impact Wiki menggunakan browser yang ada dalam device.
         FloatingActionButtonWebsite.setOnClickListener(view -> {
             String url = "https://genshin.honeyhunterworld.com/?lang=EN";
             Intent intent = new Intent(Intent.ACTION_VIEW);
@@ -48,9 +53,15 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+        //Memberikan fungsi untuk menu pada toolbar
         materialToolbar.setOnMenuItemClickListener(menuItem -> {
+            //Apabila user menekan tombol Logout, user akan di arahkan ke halaman Login.
+            // Data login sebelumnya akan dihapus.
             if (menuItem.getItemId() == R.id.menu_logout) {
+                TempLoginData.removeTempData(); //Memanggil method removeTempData dari kelas TempLoginData.
                 Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
+                //Flag pada intent ini digunakan untuk menyatakan halaman berikutnya (LoginActivity) sebagai
+                // halaman utama, dan menghapus semua activity yang berjalan sebelumnya.
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -62,6 +73,8 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
+    //Method initViews digunakan untuk meng-inisialisasikan komponen - komponen dalam
+    // layout sehingga java dapat mengakses komponen tersebut.
     private void initViews() {
         materialToolbar = findViewById(R.id.topAppBar);
         materialCardViewBoss = findViewById(R.id.materialCardViewBoss);
@@ -70,6 +83,9 @@ public class HomeActivity extends AppCompatActivity {
         FloatingActionButtonWebsite = findViewById(R.id.fab_addItem);
     }
 
+    //Method enableCardviewForAdmin digunakan untuk memeriksa apakah user yang login berupa user atau admin.
+    //Apabila user memiliki status admin, user akan memiliki akses untuk menekan card view user list.
+    //Apabila user tidak memiliki status admin, card view User List akan dihilangkan.
     private void enableCardviewForAdmin() {
         if (TempLoginData.Temp_Status.equals("admin")) {
             materialCardViewUserlist.setVisibility(View.VISIBLE);

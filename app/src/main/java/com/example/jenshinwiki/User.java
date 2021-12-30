@@ -1,5 +1,8 @@
 package com.example.jenshinwiki;
 
+// Merupakan objek berupa User.
+// User memiliki data id, name, email, username, password, dan status
+// User memiliki GETTER dan SETTER untuk semua data tersebut.
 public class User {
     private String id;
     private String name;

@@ -21,15 +21,14 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-//Penjelasan : LoginActivity.java difokuskan untuk memberikan akses kepada user untuk melakukan Login
+//LoginActivity.java difokuskan untuk memberikan akses kepada user untuk melakukan Login
 // agar dapat mengakses halaman lain dalam Aplikasi.
 // Pada kelas ini, user akan diminta untuk melakukan input berupa username dan password yang akan
 // dikirimkan ke webservices untuk dilakukan verifikasi.
 // Pada kelas ini juga, data user yang berhasil login akan disimpan secara temporary untuk keperluan lebih lanjut.
-
 public class LoginActivity extends AppCompatActivity {
 
-    //Penjelasan : Deklarasi komponen dalam Layout Login Activity.
+    //Deklarasi komponen dalam Layout Login Activity.
     TextInputLayout textInputLayoutLoginUsername;
     TextInputLayout textInputLayoutLoginPassword;
     EditText editTextLoginUsername;
@@ -43,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         initViews(); //Memanggil method initViews;
 
-        //Penjelasan : Menyatakan fungsi ketika button Login ditekan.
+        //Menyatakan fungsi ketika button Login ditekan.
         // Saat button ditekan, validasi Username dan Password akan dijalankan, lalu
         // aplikasi akan menjalankan method requestLoginVerification.
         buttonLogin.setOnClickListener(v -> {
@@ -52,7 +51,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        //Penjelasan : Menyatakan fungsi ketika textViewToRegister ditekan.
+        //Menyatakan fungsi ketika textViewToRegister ditekan.
         // Saat text view ini ditekan, tampilan interface akan diarahkan ke halaman Register.
         textViewToRegister.setOnClickListener(v -> {
             Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
@@ -60,7 +59,7 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    //Penjelasan : Method initViews digunakan untuk meng-inisialisasikan komponen - komponen dalam
+    //Method initViews digunakan untuk meng-inisialisasikan komponen - komponen dalam
     // layout sehingga java dapat mengakses komponen tersebut.
     private void initViews() {
         textInputLayoutLoginUsername = findViewById(R.id.textInputLayoutLoginUsername);
@@ -71,45 +70,46 @@ public class LoginActivity extends AppCompatActivity {
         textViewToRegister = findViewById(R.id.textViewToRegister);
     }
 
-    //Penjelasan : Method requestLoginVerification akan mencoba untuk mengirimkan data berupa
+    //Method requestLoginVerification akan mencoba untuk mengirimkan data berupa
     // username dan password untuk dilakukan verifikasi pada webservices.
     // Setelah itu aplikasi akan menerima respon dari webservices. Respon ini digunakan untuk
     // menentukan apakah user diijinkan untuk masuk ke halaman Home atau tidak.
     private void requestLoginVerification() {
-        //Penjelasan : StringRequest merupakan sebuah bentuk request / permintaan kepada webservices.
+        //StringRequest merupakan sebuah bentuk request / permintaan kepada webservices.
         StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.userLoginVerification, response -> {
             try {
                 JSONObject jsonObjectResponse = new JSONObject(response);
+
+                //Menampilkan pesan yang diterima dari webservices.
                 Toast.makeText(LoginActivity.this, jsonObjectResponse.getString("pesan"), Toast.LENGTH_SHORT).show();
 
-                //Penjelasan : Memeriksa respon dari webservices.
+                //Memeriksa respon dari webservices.
                 // Apabila respon pesan berupa "Login Berhasil!", maka user akan mendapat akses untuk
                 // berpindah ke halaman Home.
                 if (jsonObjectResponse.getString("pesan").equals("Login Berhasil!")) {
                     JSONObject headerUser = jsonObjectResponse.getJSONObject("user");
 
-                    //Penjelasan : Kelas TempLoginData disini digunakan untuk menyimpan data secara Temporary.
+                    //Kelas TempLoginData disini digunakan untuk menyimpan data secara Temporary.
                     // Data - data yang disimpan adalah data user yang berhasil melakukan login, dimana
                     // data tersebut berupa Nama, Username, dan Status dari user.
                     TempLoginData.Temp_Name = headerUser.getString("name");
                     TempLoginData.Temp_Username = headerUser.getString("username");
                     TempLoginData.Temp_Status = headerUser.getString("status");
 
-
-                    //Penjelasan : Melakukan pemindahan halaman dari halaman Login ke halaman Home.
+                    //Melakukan pemindahan halaman dari halaman Login ke halaman Home.
                     Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                     startActivity(intent);
                     finish();
                 }
             } catch (JSONException exception) {
-                exception.printStackTrace();
+                exception.printStackTrace(); //Menangkap error yang terjadi pada JSON dan mencetaknya dalam Log.
             }
         }, error -> {
-            //Penjelasan : Apabila aplikasi gagal terhubung dengan webservices, pada aplikasi akan menampilkan
+            //Apabila aplikasi gagal terhubung dengan webservices, pada aplikasi akan menampilkan
             // informasi kepada user.
             Toast.makeText(LoginActivity.this, "Gagal Terhubung dengan Server!", Toast.LENGTH_SHORT).show();
         }) {
-            //Penjelasan : Baris kode berikut digunakan sebagai data - data yang akan dikirimkan ke webservices
+            //Baris kode berikut digunakan sebagai data - data yang akan dikirimkan ke webservices
             // untuk diproses. Dalam Login, username dan password dikirim untuk melakukan verifikasi.
             @Override
             protected Map<String, String> getParams() {
@@ -119,10 +119,12 @@ public class LoginActivity extends AppCompatActivity {
                 return params;
             }
         };
-        //Penjelasan : Menjalankan permintaan untuk melakukan koneksi dengan webservices.
+        //Menjalankan permintaan untuk melakukan koneksi dengan webservices.
         AppController.getInstance(getApplicationContext()).addToRequestQueue(stringRequest);
     }
 
+    // Memvalidasi input Username,
+    //apabila kolom input username kosong, maka akan menampilkan error "Username kosong!"
     private boolean validateUsername() {
         boolean validuser = true;
         String Username = editTextLoginUsername.getText().toString();
@@ -133,6 +135,8 @@ public class LoginActivity extends AppCompatActivity {
         return validuser;
     }
 
+    // Memvalidasi input Password,
+    //apabila kolom input password kosong, maka akan menampilkan error "Password kosong!"
     private boolean validatePassword() {
         boolean validpass = true;
         String Username = editTextLoginPassword.getText().toString();
