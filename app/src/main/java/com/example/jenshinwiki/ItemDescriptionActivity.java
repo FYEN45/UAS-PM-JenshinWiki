@@ -1,11 +1,11 @@
 package com.example.jenshinwiki;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.squareup.picasso.Picasso;
 
@@ -24,14 +24,14 @@ public class ItemDescriptionActivity extends AppCompatActivity {
         receiveData();
     }
 
-    private void initViews(){
+    private void initViews() {
         imageViewItem = findViewById(R.id.description_itemImage);
         textViewIDItem = findViewById(R.id.description_itemId);
         textViewNameItem = findViewById(R.id.description_itemName);
         textViewDescriptionItem = findViewById(R.id.description_itemDestription);
     }
 
-    private void receiveData(){
+    private void receiveData() {
         Intent intent = getIntent();
         textViewIDItem.setText(intent.getStringExtra("id"));
         textViewNameItem.setText(intent.getStringExtra("name"));

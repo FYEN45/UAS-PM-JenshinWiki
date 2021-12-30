@@ -20,8 +20,7 @@
                 'monster_image' => $col['monster_image']
             );
             $hasil[$col['id']] = $product;
-
-            header("HTTP/1.1.200");
+            
             $response['error'] = FALSE;
             $response['error_text'] = "Berhasil";
             $response['data'] = $hasil;

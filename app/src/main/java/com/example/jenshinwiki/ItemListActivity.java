@@ -1,11 +1,11 @@
 package com.example.jenshinwiki;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.Request;
 import com.android.volley.VolleyLog;
@@ -37,7 +37,7 @@ public class ItemListActivity extends AppCompatActivity {
         floatingActionButtonAddItem = findViewById(R.id.fab_addItem);
         if (TempLoginData.Temp_Status.equals("admin")) {
             floatingActionButtonAddItem.setVisibility(View.VISIBLE);
-        }else{
+        } else {
             floatingActionButtonAddItem.setVisibility(View.GONE);
         }
         request();
@@ -50,7 +50,7 @@ public class ItemListActivity extends AppCompatActivity {
                 intent.putExtra("description", mListItems.get(position).getItem_description());
                 intent.putExtra("image", mListItems.get(position).getItem_image());
                 startActivity(intent);
-            }else{
+            } else {
                 Intent intent = new Intent(ItemListActivity.this, ItemDescriptionActivity.class);
                 intent.putExtra("id", mListItems.get(position).getId());
                 intent.putExtra("name", mListItems.get(position).getItem_name());
@@ -66,7 +66,7 @@ public class ItemListActivity extends AppCompatActivity {
         });
     }
 
-    private void request(){
+    private void request() {
         StringRequest strReq = new StringRequest(Request.Method.GET, Config.requestItemList, responses -> {
             try {
                 JSONObject response = new JSONObject(responses);

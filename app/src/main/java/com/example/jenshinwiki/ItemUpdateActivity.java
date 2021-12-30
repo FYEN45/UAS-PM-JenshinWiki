@@ -1,7 +1,5 @@
 package com.example.jenshinwiki;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +7,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.Request;
 import com.android.volley.toolbox.StringRequest;
@@ -64,7 +64,7 @@ public class ItemUpdateActivity extends AppCompatActivity {
         });
     }
 
-    private void initViews(){
+    private void initViews() {
         imageViewUpdateItem = findViewById(R.id.update_itemImage);
         checkLinkImageItem = findViewById(R.id.checkLinkImageItem);
         textInputLayoutItemUpdateImage = findViewById(R.id.TextInputLayoutItemUpdateImage);
@@ -83,8 +83,8 @@ public class ItemUpdateActivity extends AppCompatActivity {
         bundle = intent.getExtras();
     }
 
-    private void receiveData(){
-        if(bundle != null){
+    private void receiveData() {
+        if (bundle != null) {
             Intent intent = getIntent();
             editTextItemUpdateId.setEnabled(false);
             editTextItemUpdateId.setText(intent.getStringExtra("id"));
@@ -94,7 +94,7 @@ public class ItemUpdateActivity extends AppCompatActivity {
             String url = intent.getStringExtra("image");
             Picasso.get().load(url).into(imageViewUpdateItem);
             btnAddItem.setVisibility(View.GONE);
-        }else{
+        } else {
             editTextItemUpdateId.setEnabled(true);
             btnSaveItem.setVisibility(View.GONE);
             btnDeleteItem.setVisibility(View.GONE);
@@ -102,7 +102,7 @@ public class ItemUpdateActivity extends AppCompatActivity {
 
     }
 
-    private void requestUpdateData(){
+    private void requestUpdateData() {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.requestItemUpdate, responses -> {
             Toast.makeText(ItemUpdateActivity.this, responses, Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(ItemUpdateActivity.this, ItemListActivity.class);

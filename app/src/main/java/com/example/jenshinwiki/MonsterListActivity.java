@@ -36,7 +36,7 @@ public class MonsterListActivity extends AppCompatActivity {
         floatingActionButtonAddMonster = findViewById(R.id.fab_addMonster);
         if (TempLoginData.Temp_Status.equals("admin")) {
             floatingActionButtonAddMonster.setVisibility(View.VISIBLE);
-        }else{
+        } else {
             floatingActionButtonAddMonster.setVisibility(View.GONE);
         }
 
@@ -50,7 +50,7 @@ public class MonsterListActivity extends AppCompatActivity {
                 intent.putExtra("description", mListItems.get(position).getMonster_description());
                 intent.putExtra("image", mListItems.get(position).getMonster_image());
                 startActivity(intent);
-            }else{
+            } else {
                 Intent intent = new Intent(MonsterListActivity.this, MonsterDescriptionActivity.class);
                 intent.putExtra("id", mListItems.get(position).getId());
                 intent.putExtra("name", mListItems.get(position).getMonster_name());
@@ -66,7 +66,7 @@ public class MonsterListActivity extends AppCompatActivity {
         });
     }
 
-    private void request(){
+    private void request() {
         StringRequest strReq = new StringRequest(Request.Method.GET, Config.requestMonsterList, responses -> {
             try {
                 JSONObject response = new JSONObject(responses);
