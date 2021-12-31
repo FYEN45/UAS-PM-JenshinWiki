@@ -67,4 +67,4 @@
 
     //Menutup koneksi dengan database
     $db->close_DB();
-?>s
+?>
