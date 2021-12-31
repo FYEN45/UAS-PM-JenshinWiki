@@ -48,7 +48,7 @@ public class MonsterAdapter extends BaseAdapter {
             vi = inflater.inflate(R.layout.layout_rows, null);
         }
         //Memanggil komponen yang ada pada layout rows, menggunakan inflater
-        TextView textViewName = vi.findViewById(R.id.monsterName);
+        TextView textViewName = vi.findViewById(R.id.textViewName);
         ImageView img = vi.findViewById(R.id.monsterImage);
 
         //Memberikan nilai pada komponen, yang diambil dari database menggunakan Getter pada Monster.java

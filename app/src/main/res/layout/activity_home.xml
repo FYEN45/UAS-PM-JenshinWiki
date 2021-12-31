@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/app_background"
     tools:context=".HomeActivity">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -12,6 +13,8 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:contentDescription="Genshin Impact Official Website"
+        app:backgroundTint="@color/floating_action_button"
+        app:tint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.97"
@@ -33,6 +36,7 @@
             style="@style/Widget.MaterialComponents.Toolbar.Primary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/toolbar"
             app:logo="@drawable/ic_baseline_home_24"
             app:menu="@menu/top_app_bar"
             app:title="Home"
@@ -57,11 +61,14 @@
                 android:id="@+id/materialCardViewBoss"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:clickable="true">
+                android:clickable="true"
+                app:cardCornerRadius="15dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:background="@color/cardview_background"
+                    android:padding="10dp">
 
                     <ImageView
                         android:id="@+id/imageViewBoss"
@@ -81,7 +88,8 @@
                         android:layout_gravity="center"
                         android:layout_marginLeft="10dp"
                         android:text="Boss List"
-                        android:textSize="20sp"
+                        android:textColor="@color/cardview_title"
+                        android:textSize="24sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -94,8 +102,9 @@
                         android:id="@+id/textViewBossDesc"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
                         android:text="Daftar Boss dalam Genshin Impact"
+                        android:textColor="@color/cardview_desc"
+                        android:textSize="16sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="@+id/textViewBoss"
@@ -110,11 +119,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:clickable="true">
+                android:clickable="true"
+                app:cardCornerRadius="15dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:background="@color/cardview_background"
+                    android:padding="10dp">
 
                     <ImageView
                         android:id="@+id/imageViewItem"
@@ -134,7 +146,8 @@
                         android:layout_gravity="center"
                         android:layout_marginLeft="10dp"
                         android:text="Item List"
-                        android:textSize="20sp"
+                        android:textColor="@color/cardview_title"
+                        android:textSize="24sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -147,8 +160,9 @@
                         android:id="@+id/textViewItemDesc"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
                         android:text="Daftar Item dalam Genshin Impact"
+                        android:textColor="@color/cardview_desc"
+                        android:textSize="16sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="@+id/textViewItem"
@@ -163,11 +177,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:clickable="true">
+                android:clickable="true"
+                app:cardCornerRadius="15dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:background="@color/cardview_background"
+                    android:padding="10dp">
 
                     <ImageView
                         android:id="@+id/imageViewUserlist"
@@ -187,7 +204,8 @@
                         android:layout_gravity="center"
                         android:layout_marginLeft="10dp"
                         android:text="User List"
-                        android:textSize="20sp"
+                        android:textColor="@color/cardview_title"
+                        android:textSize="24sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -200,8 +218,9 @@
                         android:id="@+id/textViewUserlistDesc"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
                         android:text="Daftar user yang telah terdaftar dalam aplikasi Genshin Wiki"
+                        android:textColor="@color/cardview_desc"
+                        android:textSize="16sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="@+id/textViewUserlist"

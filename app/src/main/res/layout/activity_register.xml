@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/app_background"
     tools:context=".LoginActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -19,6 +21,7 @@
             style="@style/Widget.MaterialComponents.Toolbar.Primary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/toolbar"
             app:logo="@drawable/ic_baseline_person_24"
             app:title="Register"
             app:titleMarginStart="24dp" />
@@ -112,6 +115,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
+                android:backgroundTint="@color/button_default"
                 android:text="Register" />
 
             <TextView
@@ -122,6 +126,8 @@
                 android:layout_marginTop="10dp"
                 android:text="Click me to Login"
                 android:textAlignment="center"
+                android:textColor="@color/hint_text"
+                android:textSize="14sp"
                 android:textStyle="bold" />
         </LinearLayout>
     </ScrollView>

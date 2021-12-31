@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/app_background"
     tools:context=".UserUpdateActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -19,6 +20,7 @@
             style="@style/Widget.MaterialComponents.Toolbar.Primary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/toolbar"
             app:logo="@drawable/ic_baseline_person_24"
             app:title="User Update"
             app:titleMarginStart="24dp" />
@@ -116,7 +118,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:backgroundTint="#74DC6C"
+        android:backgroundTint="@color/button_yes"
         android:text="Save"
         app:layout_constraintEnd_toEndOf="@+id/toggleButtonStatus"
         app:layout_constraintHorizontal_bias="1.0"
@@ -128,7 +130,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="16dp"
-        android:backgroundTint="#BC3E3E"
+        android:backgroundTint="@color/button_no"
         android:text="Delete"
         app:layout_constraintBottom_toBottomOf="@+id/buttonSave"
         app:layout_constraintEnd_toStartOf="@+id/buttonSave"

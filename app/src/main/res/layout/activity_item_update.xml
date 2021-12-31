@@ -19,6 +19,7 @@
             style="@style/Widget.MaterialComponents.Toolbar.Primary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/toolbar"
             app:logo="@drawable/ic_baseline_person_24"
             app:title="Item Update"
             app:titleMarginStart="24dp" />
@@ -36,7 +37,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="15dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -46,17 +48,17 @@
 
                 <ImageView
                     android:id="@+id/update_itemImage"
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
                     android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="10dp"
                     app:srcCompat="@drawable/ic_launcher_background" />
 
                 <ImageView
                     android:id="@+id/checkLinkImageItem"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginLeft="5dp"
                     android:background="#000000"
                     android:backgroundTint="#000000"
                     app:srcCompat="@android:drawable/ic_popup_sync" />
@@ -65,7 +67,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/TextInputLayoutItemUpdateImage"
-                android:layout_width="400dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp">
@@ -74,12 +76,13 @@
                     android:id="@+id/editTextItemUpdateImage"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Link Image" />
+                    android:hint="Link Image"
+                    android:singleLine="true" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/TextInputLayoutItemUpdateId"
-                android:layout_width="150dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp">
@@ -88,12 +91,13 @@
                     android:id="@+id/editTextItemUpdateId"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="ID" />
+                    android:hint="ID"
+                    android:singleLine="true" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/TextInputLayoutItemUpdateName"
-                android:layout_width="400dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp">
@@ -102,16 +106,16 @@
                     android:id="@+id/editTextItemUpdateName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Name" />
+                    android:hint="Name"
+                    android:singleLine="true" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/TextInputLayoutItemUpdateDescription"
-                android:layout_width="400dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="20dp">
+                android:layout_marginTop="10dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editTextItemUpdateDescription"
@@ -125,6 +129,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
                 android:gravity="right"
                 android:orientation="horizontal">
 
@@ -132,24 +137,22 @@
                     android:id="@+id/btnAddItem"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="16dp"
-                    android:backgroundTint="#74DC6C"
+                    android:backgroundTint="@color/button_yes"
                     android:text="Add" />
 
                 <Button
                     android:id="@+id/btnSaveItem"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="16dp"
-                    android:backgroundTint="#74DC6C"
+                    android:layout_marginRight="10dp"
+                    android:backgroundTint="@color/button_yes"
                     android:text="Save" />
 
                 <Button
                     android:id="@+id/btnDeleteItem"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="16dp"
-                    android:backgroundTint="#BC3E3E"
+                    android:backgroundTint="@color/button_no"
                     android:text="Delete" />
             </LinearLayout>
 

@@ -45,7 +45,7 @@ public class UserAdapter extends BaseAdapter {
         }
 
         //Men-deklarasi dan menginisialisasikan komponen yang digunakan pada baris data user.
-        TextView textViewName = vi.findViewById(R.id.monsterName);
+        TextView textViewName = vi.findViewById(R.id.textViewName);
         TextView textViewId = vi.findViewById(R.id.textViewId);
 
         //Mengambil data dari arrayList_data dan menyimpannya untuk ditampilkan.
