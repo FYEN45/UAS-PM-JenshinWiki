@@ -124,10 +124,10 @@ public class UserUpdateActivity extends AppCompatActivity {
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<>();
                 params.put("id", id);
-                params.put("name", String.valueOf(editTextUserUpdateName.getText()));
-                params.put("email", String.valueOf(editTextUserUpdateEmail.getText()));
-                params.put("username", String.valueOf(editTextUserUpdateUsername.getText()));
-                params.put("password", String.valueOf(editTextUserUpdatePassword.getText()));
+                params.put("name", String.valueOf(editTextUserUpdateName.getText()).trim());
+                params.put("email", String.valueOf(editTextUserUpdateEmail.getText()).trim());
+                params.put("username", String.valueOf(editTextUserUpdateUsername.getText()).trim());
+                params.put("password", String.valueOf(editTextUserUpdatePassword.getText()).trim());
                 if (toggleButtonUserUpdateStatus.isChecked()) {
                     params.put("status", "admin");
                 } else {
