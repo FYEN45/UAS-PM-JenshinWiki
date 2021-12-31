@@ -8,7 +8,6 @@
     //Menentukan tipe konten, berupa JSON
     header("Content-Type:application/json");
 
-
     //Mendeklarasikan array response untuk mengirim data data user yang akan ditampilkan di user list.
     $response = array(
         'error' => FALSE,
