@@ -14,6 +14,7 @@ import com.android.volley.Request;
 import com.android.volley.toolbox.StringRequest;
 import com.example.jenshinwiki.Config.Config;
 import com.example.jenshinwiki.Controller.AppController;
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.textfield.TextInputLayout;
 import com.squareup.picasso.Picasso;
 
@@ -23,6 +24,7 @@ import java.util.Map;
 //MonsterUpdateActivity dibuat untuk menambahkan, mengedit, maupun menghapus data Monster pada database
 public class ItemUpdateActivity extends AppCompatActivity {
     //Penginisiasian variable - variable untuk pemanggilan komponen pada layout nantinya
+    MaterialToolbar materialToolbar;
     ImageView imageViewUpdateItem;
     ImageView checkLinkImageItem;
     TextInputLayout textInputLayoutItemUpdateImage;
@@ -86,6 +88,7 @@ public class ItemUpdateActivity extends AppCompatActivity {
         btnAddItem = findViewById(R.id.btnAddItem);
         btnSaveItem = findViewById(R.id.btnSaveItem);
         btnDeleteItem = findViewById(R.id.btnDeleteItem);
+        materialToolbar = findViewById(R.id.topAppBar);
 
         intent = getIntent();
         bundle = intent.getExtras();
@@ -107,12 +110,14 @@ public class ItemUpdateActivity extends AppCompatActivity {
             Picasso.get().load(url).into(imageViewUpdateItem);
             //Button add dibuat GONE karena bundle ada datanya, sehingga berfungsi untuk update/delete data
             btnAddItem.setVisibility(View.GONE);
+            materialToolbar.setTitle("Item Update");
         } else {
             //editText Id kita setEnabled menjadi true, karena else itu berarti data di bundle kosong
             //Artinya disini untuk Add Data, makanya btnSave dan btnDelete di GONE
             editTextItemUpdateId.setEnabled(true);
             btnSaveItem.setVisibility(View.GONE);
             btnDeleteItem.setVisibility(View.GONE);
+            materialToolbar.setTitle("Item Add");
         }
 
     }

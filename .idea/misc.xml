@@ -4,7 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Felix/Kuliah/Semester 5/1. Pemrograman Mobile/UAS-PM-JenshinWiki/app/src/main/res/layout/activity_home.xml" value="0.2234375" />
-        <entry key="..\:/Felix/Kuliah/Semester 5/1. Pemrograman Mobile/UAS-PM-JenshinWiki/app/src/main/res/layout/activity_item_description.xml" value="0.2" />
+        <entry key="..\:/Felix/Kuliah/Semester 5/1. Pemrograman Mobile/UAS-PM-JenshinWiki/app/src/main/res/layout/activity_item_description.xml" value="0.264" />
         <entry key="..\:/Felix/Kuliah/Semester 5/1. Pemrograman Mobile/UAS-PM-JenshinWiki/app/src/main/res/layout/activity_item_list.xml" value="0.2234375" />
         <entry key="..\:/Felix/Kuliah/Semester 5/1. Pemrograman Mobile/UAS-PM-JenshinWiki/app/src/main/res/layout/activity_item_update.xml" value="0.264" />
         <entry key="..\:/Felix/Kuliah/Semester 5/1. Pemrograman Mobile/UAS-PM-JenshinWiki/app/src/main/res/layout/activity_login.xml" value="0.2234375" />
@@ -16,7 +16,6 @@
         <entry key="..\:/Felix/Kuliah/Semester 5/1. Pemrograman Mobile/UAS-PM-JenshinWiki/app/src/main/res/layout/activity_user_update.xml" value="0.2234375" />
         <entry key="..\:/Felix/Kuliah/Semester 5/1. Pemrograman Mobile/UAS-PM-JenshinWiki/app/src/main/res/layout/layout_rows.xml" value="0.2234375" />
         <entry key="..\:/Felix/Kuliah/Semester 5/1. Pemrograman Mobile/UAS-PM-JenshinWiki/app/src/main/res/layout/user_item.xml" value="0.2234375" />
-        <entry key="..\:/GitHub/Android Studio/JenshinWiki/app/src/main/res/drawable/ic_baseline_open_in_browser_24.xml" value="0.37864583333333335" />
         <entry key="..\:/GitHub/Android Studio/JenshinWiki/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.37864583333333335" />
         <entry key="..\:/GitHub/Android Studio/JenshinWiki/app/src/main/res/layout/activity_home.xml" value="0.3625" />
         <entry key="..\:/GitHub/Android Studio/JenshinWiki/app/src/main/res/layout/activity_item_description.xml" value="0.3625" />
@@ -30,7 +29,6 @@
         <entry key="..\:/GitHub/Android Studio/JenshinWiki/app/src/main/res/layout/activity_register.xml" value="0.3484375" />
         <entry key="..\:/GitHub/Android Studio/JenshinWiki/app/src/main/res/layout/activity_user_list.xml" value="0.3625" />
         <entry key="..\:/GitHub/Android Studio/JenshinWiki/app/src/main/res/layout/activity_user_update.xml" value="0.3625" />
-        <entry key="..\:/GitHub/Android Studio/JenshinWiki/app/src/main/res/layout/layout_rows.xml" value="0.3625" />
         <entry key="..\:/GitHub/Android Studio/JenshinWiki/app/src/main/res/layout/sample_my_view.xml" value="0.3484375" />
         <entry key="..\:/GitHub/Android Studio/JenshinWiki/app/src/main/res/layout/user_item.xml" value="0.3625" />
         <entry key="..\:/GitHub/Android Studio/JenshinWiki/app/src/main/res/menu/top_app_bar.xml" value="0.3625" />
