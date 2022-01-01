@@ -87,7 +87,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginLeft="10dp"
-                        android:text="Boss List"
+                        android:text="Monster List"
                         android:textColor="@color/cardview_title"
                         android:textSize="24sp"
                         android:textStyle="bold"
