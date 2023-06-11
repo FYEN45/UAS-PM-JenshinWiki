@@ -13,20 +13,20 @@ Website ini dibuat menggunakan teknologi :
 
 |          Splash Screen           |             Register             |
 | :------------------------------: | :------------------------------: |
-| ![Alt text](images/Picture1.png) | ![Alt text](images/Picture3.png) |
+| ![Alt text](images/picture1.png) | ![Alt text](images/picture3.png) |
 
 |              Login               |               Home               |
 | :------------------------------: | :------------------------------: |
-| ![Alt text](images/Picture2.png) | ![Alt text](images/Picture4.png) |
+| ![Alt text](images/picture2.png) | ![Alt text](images/picture4.png) |
 
 |          Daftar Monster          |          Update Monster          |
 | :------------------------------: | :------------------------------: |
-| ![Alt text](images/Picture5.png) | ![Alt text](images/Picture7.png) |
+| ![Alt text](images/picture5.png) | ![Alt text](images/picture7.png) |
 
 |           Daftar Item            |           Tambah Item            |            Update Item            |
 | :------------------------------: | :------------------------------: | :-------------------------------: |
-| ![Alt text](images/Picture8.png) | ![Alt text](images/Picture9.png) | ![Alt text](images/Picture10.png) |
+| ![Alt text](images/picture8.png) | ![Alt text](images/picture9.png) | ![Alt text](images/picture10.png) |
 
 |          Daftar Pengguna          |          Update Pengguna          |
 | :-------------------------------: | :-------------------------------: |
-| ![Alt text](images/Picture11.png) | ![Alt text](images/Picture12.png) |
+| ![Alt text](images/picture11.png) | ![Alt text](images/picture12.png) |
